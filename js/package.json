@@ -4,7 +4,9 @@
   "description": "[![Build Status](https://travis-ci.com/skycoin/hardware-wallet-nanopb.svg?branch=master)](https://travis-ci.com/skycoin/hardware-wallet-nanopb)",
   "scripts": {
     "lint": "./node_modules/.bin/eslint ./*.js",
-    "gen-proto": "./node_modules/.bin/pbjs -t static-module -w commonjs -o ./skycoin.js ../protob/messages/messages.proto ../protob/messages/types.proto"
+    "gen-proto": "./node_modules/.bin/pbjs -t static-module -w commonjs -o ./skycoin.js ../protob/messages/messages.proto ../protob/messages/types.proto",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -19,7 +21,8 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "protobufjs": "^6.8.8",
-    "scanf": "^1.0.2"
+    "scanf": "^1.0.2",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -32,5 +35,6 @@
     "eslint": "^5.4.0",
     "js-sha256": "^0.9.0",
     "node-test": "^1.2.4"
-  }
+  },
+  "snyk": true
 }
