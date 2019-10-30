@@ -478,4 +478,6 @@ message TransactionSign {
 	repeated SkycoinTransactionInput transactionIn = 2;
 	required uint32 nbOut = 3;
 	repeated SkycoinTransactionOutput transactionOut = 4;
+  // This field will be present ONLY for transactions with more than 8 inputs or 8 outputs
+  optional bool noMoreTransactionData = 5;
 }
